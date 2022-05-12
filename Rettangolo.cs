@@ -8,12 +8,12 @@ namespace csharp_geometria
 {
     internal class Rettangolo
     {
-        private double baseRettangolo;
-        private double altezzaRettangolo;
+        private readonly double baseRettangolo;
+        private readonly double altezzaRettangolo;
 
-        private string nomeRettangolo; //lo chiede nella parte finale dell'esercizio
-                                       //quando dice di creare tanti rettangoli con nomi diversi...
-    
+        private readonly string nomeRettangolo; //lo chiede nella parte finale dell'esercizio
+                                                //quando dice di creare tanti rettangoli con nomi diversi...
+
         //Costruttore senza parametri, inizializza tutto a 0
         //Notare che un costruttore non ha mai un valore di ritorno!!!
         public Rettangolo()
@@ -32,9 +32,9 @@ namespace csharp_geometria
         }
 
         //Costruttore con tre parametri, per creare rettangolo con base e altezza dati
-        public Rettangolo(double baseR, double altezzaR, string nomeR)
+        public Rettangolo(double baseRettangolo, double altezzaR, string nomeR)
         {
-            baseRettangolo = baseR;
+            this.baseRettangolo = baseRettangolo;
             altezzaRettangolo = altezzaR;
             nomeRettangolo = nomeR;
         }
@@ -67,8 +67,10 @@ namespace csharp_geometria
             for (int i = 1; i < (baseRettangolo-1); ++i)
                 Console.Write("-");
             Console.WriteLine("+");
+
             for (int i = 1; i < (altezzaRettangolo - 1); ++i)
                 Console.WriteLine("|{0}|", new String(' ', (int)(baseRettangolo-2)));
+
             Console.Write("+");
             for (int i = 1; i < (baseRettangolo - 1); ++i)
                 Console.Write("-");
